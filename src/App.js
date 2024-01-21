@@ -4,6 +4,7 @@ import Pocetna from './Components/Pocetna';
 import Navbar from './Components/Navbar'; 
 import Footer from './Components/Footer'; 
 import OnlineProdavnica from './Components/OnlieProdvnica';
+import JedanProizvod from './Components/JedanProizvod';
 import './App.css';
 
 const App = () => {
@@ -13,6 +14,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Pocetna />} />
         <Route path="/online-prodavnica" element={<OnlineProdavnica />} />
+        <Route path="/online-prodavnica" element={<JedanProizvod />} />
+
 
       </Routes>
       <Footer /> 
