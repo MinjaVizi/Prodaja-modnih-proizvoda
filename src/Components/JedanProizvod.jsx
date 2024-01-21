@@ -1,15 +1,9 @@
 import React from 'react';
 import '../App.css';
-//import addCartIcon from '../path/to/add-cart-icon.png'; // Zamijenite sa stvarnom putanjom do ikonice
-//import favoriteIcon from '../path/to/favorite-icon.png'; // Zamijenite sa stvarnom putanjom do ikonice
 
 const JedanProizvod = ({ naziv, opis, cena, slike }) => {
-  const openDetails = () => {
-    console.log('Detalji proizvoda');
-  };
-
   return (
-    <div className="product-card" onClick={openDetails}>
+    <div className="product-card">
       <div className="product-image-container">
         {slike.map((slika, index) => (
           <img key={index} src={slika} alt={`Proizvod ${index}`} />
@@ -25,8 +19,8 @@ const JedanProizvod = ({ naziv, opis, cena, slike }) => {
         <button className="product-option-btn">ODABERITE OPCIJE</button>
       </div>
       <div className="product-actions">
-        <img src={addCartIcon} alt="Dodaj u korpu" />
-        <img src={favoriteIcon} alt="Omiljeno" />
+        <img src="https://img.icons8.com/ios-filled/50/000000/add-shopping-cart.png" alt="Dodaj u korpu" className="action-icon" />
+        <img src="https://img.icons8.com/ios-filled/50/000000/favorite-cart.png" alt="Omiljeno" className="action-icon" />
       </div>
     </div>
   );
