@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
-import dodajukorpu from '../Images/dodajukorpu.png'; // Pretpostavljena putanja do vaše ikonice za dodavanje u korpu
-import omiljeno from '../Images/omiljeno.png'; // Pretpostavljena putanja do vaše ikonice za omiljeno
+import dodajukorpu from '../Images/dodajukorpu.png'; 
+import omiljeno from '../Images/omiljeno.png';
 
 const JedanProizvod = ({ naziv, opis, cena, slike }) => {
   return (
