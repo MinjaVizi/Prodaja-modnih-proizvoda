@@ -1,5 +1,7 @@
 import React from 'react';
 import '../App.css';
+import dodajukorpu from '../Images/dodajukorpu.png'; // Pretpostavljena putanja do vaše ikonice za dodavanje u korpu
+import omiljeno from '../Images/omiljeno.png'; // Pretpostavljena putanja do vaše ikonice za omiljeno
 
 const JedanProizvod = ({ naziv, opis, cena, slike }) => {
   return (
@@ -19,8 +21,8 @@ const JedanProizvod = ({ naziv, opis, cena, slike }) => {
         <button className="product-option-btn">ODABERITE OPCIJE</button>
       </div>
       <div className="product-actions">
-        <img src="https://img.icons8.com/ios-filled/50/000000/add-shopping-cart.png" alt="Dodaj u korpu" className="action-icon" />
-        <img src="https://img.icons8.com/ios-filled/50/000000/favorite-cart.png" alt="Omiljeno" className="action-icon" />
+        <img src={dodajukorpu} alt="Dodaj u korpu" className="action-icon" />
+        <img src={omiljeno} alt="Omiljeno" className="action-icon" />
       </div>
     </div>
   );
