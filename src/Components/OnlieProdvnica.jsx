@@ -9,8 +9,9 @@ const OnlineProdavnica = ({ dodajUKorpu, dodajUOmiljeno }) => {
       naziv: 'Haljina H3200',
       opis: 'Elegantna crna haljina sa detaljima na rukavima.',
       cena: '3,490.00',
-      slike: ['https://via.placeholder.com/200']
-    },
+     slike: [
+        '../Images/ha',
+      ]    },
     {
       naziv: 'Kožna Jakna',
       opis: 'Moderan i urbani stil, savršeno se uklapa u svaku kombinaciju.',
