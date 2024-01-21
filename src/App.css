@@ -64,42 +64,59 @@ a {
     align-items: center;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
-  
+
 .footer-section {
     display: flex;
     flex-direction: column;
 }
-  
+
 .footer-heading {
     color: #333;
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 15px;
 }
-  
+
 .footer-link {
     color: #666;
     margin-bottom: 10px;
     font-size: 16px;
     transition: color 0.3s;
 }
-  
+
 .footer-link:hover,
 .footer-link:focus {
     color: #f00;
 }
-  
+
 .social-icons {
     display: flex;
 }
-  
+
 .social-icon {
     margin-right: 10px;
 }
-  
+
 .social-icon img {
     width: 24px;
     height: auto;
 }
 
-/* Ensure to add any additional global or specific styles below */
+.homepage-background {
+  background-image: url('../Images/pocetna.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.welcome-message {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  padding: 20px;
+  width: 40%;
+  border-radius: 5px;
+}
