@@ -78,7 +78,22 @@ html, body {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    /* Uklonite position: fixed i bottom: 0 ako ih imate */
+    /* position: fixed; */
+    /* bottom: 0; */
+    /* left: 0; */
+    /* right: 0; */
+    /* z-index: 1000; */
   }
+  
+  /* Ako je potrebno, dodajte dodatni padding na dnu sadržaja */
+  .content {
+    padding-bottom: 80px; /* Prilagodite ovo vrednosti da biste oslobodili prostor za footer */
+  }
+  
+  /* Ostali stilovi */
+  
+  
   
   .footer-section {
     display: flex;
@@ -233,5 +248,71 @@ html, body {
     width: 100%;
     height: auto;
     display: block;
+  }
+  
+
+  .onama-background {
+    background-image: url('./Images/pocetna.png');
+    background-size: cover;
+    background-position: center;
+    min-height: calc(100vh - 110px); /* Visina ekrana minus visina navbar-a */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .onama-content {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: brown;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center; /* Centriranje teksta */
+    max-width: 600px; /* Maksimalna širina diva */
+    margin: 0 auto; /* Centriranje diva */
+  }
+  .content {
+    padding-bottom: 180px; /* Ili bilo koja vrednost koja je dovoljna da oslobodi prostor za footer */
+  }
+  
+
+
+  .registration-container {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .registration-btn {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .registration-btn:hover {
+    background-color: #f00;
   }
   

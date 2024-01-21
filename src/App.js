@@ -4,6 +4,7 @@ import Pocetna from './Components/Pocetna';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import OnlineProdavnica from './Components/OnlieProdvnica';
+import Registracija from './Components/Registracija';
 import './App.css';
 
 const App = () => {
@@ -12,7 +13,11 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Pocetna />} />
-        <Route path="/online-prodavnica" element={<OnlineProdavnica />} />
+        <Route path="/Online-prodavnica" element={<OnlineProdavnica />} />
+        <Route path="/O-nama" element={<oNama />} />
+        <Route path="/Registracija" element={<Registracija />} />
+
+
       </Routes>
       <Footer />
     </Router>

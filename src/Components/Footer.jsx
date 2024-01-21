@@ -2,6 +2,8 @@ import React from 'react';
 import facebookIcon from '../Images/facebook.png';
 import instagramIcon from '../Images/instagram.png';
 import emailIcon from '../Images/email.png';
+import '../App.css';
+
 
 const Footer = () => {
   return (
