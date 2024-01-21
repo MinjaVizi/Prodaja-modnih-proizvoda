@@ -1,10 +1,9 @@
 import React from 'react';
 import JedanProizvod from './JedanProizvod';
-import backgroundImg from '../Images/pocetna.png';
-
+import backgroundImg from '../Images/pocetna1.png';
 import '../App.css';
 
-const OnlineProdavnica = () => {
+const OnlineProdavnica = ({ dodajUKorpu, dodajUOmiljeno }) => {
   const dummyData = [
     {
       naziv: 'Haljina H3200',
@@ -78,15 +77,24 @@ const OnlineProdavnica = () => {
         cena: '12,000.00',
         slike: ['https://via.placeholder.com/200']
       }
-  ];
+    ];
 
-  return (
-    <div className="online-prodavnica-container">
-      {dummyData.map((proizvod, index) => (
-        <JedanProizvod key={index} {...proizvod} />
-      ))}
-    </div>
-  );
-};
-
-export default OnlineProdavnica;
+    return (
+      <div className="onama-background" style={{ backgroundImage: `url(${backgroundImg})` }}>
+        <div className="content">
+          <div className="online-prodavnica-container">
+            {dummyData.map((proizvod, index) => (
+              <JedanProizvod 
+                key={index} 
+                {...proizvod} 
+                dodajUKorpu={() => dodajUKorpu(proizvod)} 
+                dodajUOmiljeno={() => dodajUOmiljeno(proizvod)} 
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  };
+  
+  export default OnlineProdavnica;

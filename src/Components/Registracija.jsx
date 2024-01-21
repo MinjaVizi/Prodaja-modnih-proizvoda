@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import backgroundImg from '../Images/pozadina.jpg';
+import backgroundImg from '../Images/pocetna1.png';
 
 import '../App.css';
 
@@ -31,7 +31,6 @@ const Registracija = () => {
   };
 
   return (
-
     <div className="onama-background" style={{ backgroundImage: `url(${backgroundImg})` }}>
 
     <div className="registration-container">

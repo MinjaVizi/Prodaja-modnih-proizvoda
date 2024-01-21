@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
+import backgroundImg from '../Images/pocetna1.png';
+
 import '../App.css';
 
 const UlogujSe = () => {
   return (
-    
+    <div className="onama-background" style={{ backgroundImage: `url(${backgroundImg})` }}>
+
     <div className="login-page-content">   
       <div className="login-form-section">
         <div className="login-form">
@@ -26,6 +29,8 @@ const UlogujSe = () => {
         </div>
       </div>
     </div>
+    </div>
+
   );
 };
 
