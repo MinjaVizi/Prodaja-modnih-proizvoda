@@ -1,5 +1,7 @@
 import React from 'react';
 import JedanProizvod from './JedanProizvod';
+import backgroundImg from '../Images/pocetna.png';
+
 import '../App.css';
 
 const OnlineProdavnica = () => {

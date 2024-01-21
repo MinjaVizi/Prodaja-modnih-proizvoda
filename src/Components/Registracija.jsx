@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import backgroundImg from '../Images/pozadina.jpg';
+
 import '../App.css';
 
 
 const Registracija = () => {
+
   const [form, setForm] = useState({
     ime: '',
     email: '',
@@ -24,11 +27,13 @@ const Registracija = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Logika za slanje podataka na server ili neku drugu logiku obrade
     console.log('Form data:', form);
   };
 
   return (
+
+    <div className="onama-background" style={{ backgroundImage: `url(${backgroundImg})` }}>
+
     <div className="registration-container">
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -65,7 +70,8 @@ const Registracija = () => {
         </div>
         <button type="submit" className="registration-btn">REGISTRACIJA</button>
       </form>
-    </div>
+    </div>    </div>
+
   );
 };
 

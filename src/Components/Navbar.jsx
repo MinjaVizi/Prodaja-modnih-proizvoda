@@ -15,7 +15,7 @@ const Navbar = () => {
       <Link to="/online-prodavnica" className="navbar-link">Online Prodavnica</Link>
       <Link to="/korpa" className="navbar-link">Korpa</Link>
       <Link to="/omiljeno" className="navbar-link">Omiljeno</Link>
-      <input type="text" placeholder="Pretraga proizvoda..." className="search-input" />
+      <input type="text" placeholder="Pretraga..." className="search-input" />
     </nav>
   );
 };

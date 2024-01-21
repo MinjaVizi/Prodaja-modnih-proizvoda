@@ -1,33 +1,33 @@
 html, body {
     height: 100%;
     margin: 0;
-  }
-  
-  #root {
+}
+
+#root {
     display: flex;
     flex-direction: column;
     min-height: 100%;
-  }
-  
-  .content {
+}
+
+.content {
     flex: 1;
-  }
-  
-  a {
+}
+
+a {
     text-decoration: none;
     color: inherit;
-  }
-  
-  .navbar {
+}
+
+.navbar {
     background-color: #ffffff;
     padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: start;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .navbar-link {
+}
+
+.navbar-link {
     padding: 10px 15px;
     margin: 0 10px;
     color: #333;
@@ -35,14 +35,14 @@ html, body {
     text-transform: uppercase;
     border-bottom: 3px solid transparent;
     transition: border-bottom-color 0.3s;
-  }
-  
-  .navbar-link:hover,
-  .navbar-link:focus {
+}
+
+.navbar-link:hover,
+.navbar-link:focus {
     border-bottom-color: #f00;
-  }
-  
-  .search-input {
+}
+
+.search-input {
     padding: 10px;
     margin-left: auto;
     margin-right: 30px;
@@ -50,96 +50,86 @@ html, body {
     border-radius: 4px;
     width: 50%;
     max-width: 250px;
-  }
-  
-  .icon-link {
+}
+
+.icon-link {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: 10px;
-  }
-  
-  .navbar-logo {
+}
+
+.navbar-logo {
     height: 110px;
     margin-right: 20px;
     margin-left: 10px;
     align-self: center;
-  }
-  
-  .brand-name {
+}
+
+.brand-name {
     display: block;
     margin-right: 50px;
-  }
-  
-  .footer {
+}
+
+.footer {
     background-color: #f8f9fa;
     padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-    /* Uklonite position: fixed i bottom: 0 ako ih imate */
-    /* position: fixed; */
-    /* bottom: 0; */
-    /* left: 0; */
-    /* right: 0; */
-    /* z-index: 1000; */
-  }
-  
-  /* Ako je potrebno, dodajte dodatni padding na dnu sadržaja */
-  .content {
-    padding-bottom: 80px; /* Prilagodite ovo vrednosti da biste oslobodili prostor za footer */
-  }
-  
-  /* Ostali stilovi */
-  
-  
-  
-  .footer-section {
+}
+
+.content {
+    padding-bottom: 80px;
+}
+
+.footer-section {
     display: flex;
     flex-direction: column;
-  }
-  
-  .footer-heading {
+}
+
+.footer-heading {
     color: #333;
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 15px;
-  }
-  
-  .footer-link {
+}
+
+.footer-link {
     color: #666;
     margin-bottom: 10px;
     font-size: 16px;
     transition: color 0.3s;
-  }
-  
-  .footer-link:hover,
-  .footer-link:focus {
+}
+
+.footer-link:hover,
+.footer-link:focus {
     color: #f00;
-  }
-  
-  .social-icons {
+}
+
+.social-icons {
     display: flex;
     flex-direction: column;
-  }
-  
-  .social-icon {
+}
+
+.social-icon {
     margin: 5px 0;
-  }
-  
-  .social-icon img {
+}
+
+.social-icon img {
     width: 24px;
     height: auto;
-  }
-  
-  .homepage-background {
+}
+
+.homepage-background {
     background-size: cover;
     background-position: center;
     height: 100vh;
-  }
-  
-  .welcome-message {
+    margin-top: 60px;
+}
+
+.welcome-message {
     position: absolute;
     right: 0;
     top: 50%;
@@ -149,9 +139,9 @@ html, body {
     padding: 20px;
     width: 40%;
     border-radius: 5px;
-  }
-  
-  .product-card {
+}
+
+.product-card {
     width: 100%;
     max-width: 300px;
     background: #fff;
@@ -160,149 +150,146 @@ html, body {
     overflow: hidden;
     margin: 20px;
     cursor: pointer;
-  }
-  
-  .product-image-container {
+}
+
+.product-image-container {
     height: 200px;
     overflow: hidden;
-  }
-  
-  .product-image-container img {
+}
+
+.product-image-container img {
     width: 100%;
     display: block;
-  }
-  
-  .product-info {
+}
+
+.product-info {
     padding: 15px;
-  }
-  
-  .product-header {
+}
+
+.product-header {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-  
-  .new-label {
+}
+
+.new-label {
     background: red;
     color: white;
     padding: 5px;
     border-radius: 5px;
     font-size: 14px;
-  }
-  
-  .product-description {
+}
+
+.product-description {
     font-size: 14px;
     color: #666;
-  }
-  
-  .product-price {
+}
+
+.product-price {
     font-size: 18px;
     font-weight: bold;
     color: #333;
-  }
-  
-  .product-option-btn {
+}
+
+.product-option-btn {
     background: #f00;
     color: white;
     border: none;
     padding: 10px 15px;
     margin-top: 10px;
     cursor: pointer;
-  }
-  
-  .product-actions {
+}
+
+.product-actions {
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 10px;
-  }
-  
-  .product-actions img {
+}
+
+.product-actions img {
     width: 24px;
     cursor: pointer;
-  }
-  
-  .online-prodavnica-container {
+}
+
+.online-prodavnica-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 20px;
-  }
-  
-  .product-card {
+}
+
+.product-card {
     width: calc(25% - 20px);
     margin: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
-  }
-  
-  .product-image-container {
+}
+
+.product-image-container {
     width: 100%;
     height: 200px;
     overflow: hidden;
-  }
-  
-  .product-image-container img {
+}
+
+.product-image-container img {
     width: 100%;
     height: auto;
     display: block;
-  }
-  
+}
 
-  .onama-background {
+.onama-background {
     background-image: url('./Images/pocetna.png');
     background-size: cover;
     background-position: center;
-    min-height: calc(100vh - 110px); /* Visina ekrana minus visina navbar-a */
+    min-height: calc(100vh - 110px);
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  
-  .onama-content {
+}
+
+.onama-content {
     background-color: rgba(255, 255, 255, 0.7);
     color: brown;
     padding: 20px;
     border-radius: 8px;
-    text-align: center; /* Centriranje teksta */
-    max-width: 600px; /* Maksimalna širina diva */
-    margin: 0 auto; /* Centriranje diva */
-  }
-  .content {
-    padding-bottom: 180px; /* Ili bilo koja vrednost koja je dovoljna da oslobodi prostor za footer */
-  }
-  
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
 
+.content {
+    padding-bottom: 180px;
+}
 
-  .registration-container {
+.registration-container {
     max-width: 600px;
     margin: 30px auto;
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     border-radius: 8px;
-  }
-  
-  .form-group {
+}
+
+.form-group {
     margin-bottom: 15px;
-  }
-  
-  .form-group label {
+}
+
+.form-group label {
     display: block;
     margin-bottom: 5px;
-  }
-  
-  .form-group input {
+}
+
+.form-group input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-  }
-  
-  .registration-btn {
+}
+
+.registration-btn {
     width: 100%;
     padding: 10px 15px;
     background-color: #333;
@@ -310,9 +297,130 @@ html, body {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
-  
-  .registration-btn:hover {
+}
+
+.registration-btn:hover {
     background-color: #f00;
+}
+
+.login-page-content {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.login-form-section {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+}
+
+.login-form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    margin-bottom: 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+.login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.register-link {
+    text-align: center;
+}
+
+.register-link a {
+    color: #f00;
+    text-decoration: none;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.onama-background {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 10%; /* Adjust padding as needed */
   }
   
+  .onama-content {
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent background for readability */
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px; /* Adjust width as needed */
+    text-align: justify;
+  }
+  
+  .onama-content h1 {
+    text-align: center;
+    color: #f00; /* Adjust to use the primary color of your brand */
+    margin-bottom: 30px;
+  }
+  
+  .onama-background {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 10%; /* Adjust padding as needed */
+  }
+  
+  .onama-content {
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent background for readability */
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px; /* Adjust width as needed */
+    text-align: justify;
+  }
+  
+  .onama-content h1 {
+    text-align: center;
+    color: #f00; /* Adjust to use the primary color of your brand */
+    margin-bottom: 30px;
+  }
+  
+  /* ... rest of your styles ... */
+    
