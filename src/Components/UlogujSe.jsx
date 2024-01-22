@@ -20,7 +20,7 @@ const UlogujSe = () => {
             <label htmlFor="password">Lozinka:</label>
             <input type="password" id="password" placeholder="Lozinka" />
           </div>
-          <a href="#" className="forgot-password">Zaboravili ste lozinku?</a>
+         
           <button className="login-button">PRIJAVA</button>
           <div className="register-link">
             Novi korisnik?       

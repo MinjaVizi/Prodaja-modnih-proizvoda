@@ -3,12 +3,13 @@ import backgroundImg from '../Images/pocetna1.png';
 
 import '../App.css';
 
-const Korpa = ({korpa, setKorpa}) => {
+const Korpa = ({ korpa, setKorpa }) => {
   const [placanje, setPlacanje] = useState('pouzecem');
   const [cvc, setCVC] = useState('');
   const [brojKartice, setBrojKartice] = useState('');
   const [datumIsteka, setDatumIsteka] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
+  const [korak, setKorak] = useState(1);  
 
   const dodajUKorpu = (proizvod) => {
     setKorpa([...korpa, proizvod]);
@@ -47,9 +48,39 @@ const Korpa = ({korpa, setKorpa}) => {
   return (
     <div className="onama-background" style={{ backgroundImage: `url(${backgroundImg})` }}>
       <div className="korpa-wrapper">
-        <div className="korpa-container">
-          <h2>Unesite podatke o kupcu:</h2>
-          <div className="form-container">
+        {korak === 1 && (
+          <>
+            <div className="korpa-container">
+              <h2>Proizvodi u korpi</h2>
+              <div className="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Naziv proizvoda</th>
+                      <th>Cena</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {korpa.map((proizvod, index) => (
+                      <tr key={index}>
+                        <td>{proizvod.naziv}</td>
+                        <td>{proizvod.cena} dinara</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <button onClick={() => setKorak(2)} className="next-btn">Next</button>
+            </div>
+           
+          </>
+        )}
+
+        {korak === 2 && (
+          <>
+            <div className="korpa-container">
+              <h2>Unesite podatke o kupcu:</h2>
+              <div className="form-container">
             <div className="form-group">
               <label>Ime:</label>
               <input type="text" />
@@ -67,10 +98,17 @@ const Korpa = ({korpa, setKorpa}) => {
               <input type="text" />
             </div>
           </div>
-        </div>
-        <div className="korpa-container">
-          <h2>Način plaćanja</h2>
-          <div className="form-container">
+          <button onClick={() => setKorak(3)} className="next-btn">Next</button>
+            </div>
+         
+          </>
+        )}
+
+        {korak === 3 && (
+          <>
+            <div className="korpa-container">
+              <h2>Način plaćanja</h2>
+              <div className="form-container">
             <label>
               <select value={placanje} onChange={promeniPlacanje}>
                 <option value="pouzecem">Plaćanje pouzećem</option>
@@ -98,29 +136,11 @@ const Korpa = ({korpa, setKorpa}) => {
               </div>
             )}
           </div>
-        </div>
-        <div className="korpa-container">
-          <h2>Proizvodi u korpi</h2>
-          <div className="table-container">
-            <table>
-              <thead>
-                <tr>
-                  <th>Naziv proizvoda</th>
-                  <th>Cena</th>
-                </tr>
-              </thead>
-              <tbody>
-                {korpa.map((proizvod, index) => (
-                  <tr key={index}>
-                    <td>{proizvod.naziv}</td>
-                    <td>{proizvod.cena} dinara</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <button onClick={potvrdiKupovinu} className="potvrdi-btn">Potvrdi kupovinu</button>
+          <button onClick={potvrdiKupovinu} className="potvrdi-btn">Potvrdi kupovinu</button>
+            </div>
+           
+          </>
+        )}
         {modalOpen && (
           <div className="modal">
             <div className="modal-content">

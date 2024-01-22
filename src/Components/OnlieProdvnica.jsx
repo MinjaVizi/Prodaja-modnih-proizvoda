@@ -2,16 +2,16 @@ import React from 'react';
 import JedanProizvod from './JedanProizvod';
 import backgroundImg from '../Images/pocetna1.png';
 import '../App.css';
-
+import slika1 from './Images/dzemper.jpeg';
+import slika2 from './Images/sandale.jpeg';
 const OnlineProdavnica = ({ dodajUKorpu, dodajUOmiljeno }) => {
   const dummyData = [
     {
       naziv: 'Haljina H3200',
       opis: 'Elegantna crna haljina sa detaljima na rukavima.',
       cena: '3,490.00',
-     slike: [
-        '../Images/ha',
-      ]    },
+       slike: [slika1]
+       },
     {
       naziv: 'Kožna Jakna',
       opis: 'Moderan i urbani stil, savršeno se uklapa u svaku kombinaciju.',

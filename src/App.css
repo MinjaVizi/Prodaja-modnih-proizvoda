@@ -255,7 +255,7 @@ a {
 
 
 .registration-container {
-    max-width: 600px;
+  width: 600px;
     margin: 30px auto;
     background-color: #fff;
     padding: 20px;
@@ -295,6 +295,7 @@ a {
 }
 
 .login-page-content {
+  width: 500px;
     display: flex;
     justify-content: center;
     padding: 50px 0;
@@ -420,7 +421,7 @@ h2 {
   }
   
   .korpa-container {
-    width: 30%;
+    width: 500px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
