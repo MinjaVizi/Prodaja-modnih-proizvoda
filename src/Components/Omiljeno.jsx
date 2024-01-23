@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import backgroundImg from '../Images/pocetna1.png';
+import backgroundImg from './Images/pocetna1.png';
 
 const Omiljeno = ({ omiljeno, ukloniIzOmiljenih }) => {
   return (

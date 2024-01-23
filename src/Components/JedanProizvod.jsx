@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
-import dodajukorpu from '../Images/dodajukorpu.png'; 
-import omiljeno from '../Images/omiljeno.png';
+import dodajukorpu from './Images/dodajukorpu.png'; 
+import omiljeno from './Images/omiljeno.png';
 
 const JedanProizvod = ({ naziv, opis, cena, slike, dodajUKorpu, dodajUOmiljeno }) => {
   return (

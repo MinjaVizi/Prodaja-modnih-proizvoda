@@ -1,6 +1,6 @@
 import React from 'react';
 import JedanProizvod from './JedanProizvod';
-import backgroundImg from '../Images/pocetna1.png';
+import backgroundImg from './Images/pocetna1.png';
 import '../App.css';
 import slika1 from './Images/dzemper.jpeg';
 import slika2 from './Images/sandale.jpeg';

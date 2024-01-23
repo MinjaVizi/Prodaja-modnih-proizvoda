@@ -1,5 +1,5 @@
 import React from 'react';
-import backgroundImg from '../Images/pocetna1.png';
+import backgroundImg from './Images/pocetna1.png';
 import '../App.css';
 
 const Pocetna = () => {

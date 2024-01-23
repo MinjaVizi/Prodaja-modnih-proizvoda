@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
-import backgroundImg from '../Images/pocetna1.png';
+import backgroundImg from './Images/pocetna1.png';
 
 import '../App.css';
 
