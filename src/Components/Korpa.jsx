@@ -1,44 +1,31 @@
 import React, { useState } from 'react';
 import backgroundImg from './Images/pocetna1.png';
 
-import '../App.css';
-
 const Korpa = ({ korpa, setKorpa }) => {
   const [placanje, setPlacanje] = useState('pouzecem');
   const [cvc, setCVC] = useState('');
   const [brojKartice, setBrojKartice] = useState('');
   const [datumIsteka, setDatumIsteka] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
-  const [korak, setKorak] = useState(1);  
+  const [korak, setKorak] = useState(1);
+  const [ime, setIme] = useState('');
+  const [prezime, setPrezime] = useState('');
+  const [adresa, setAdresa] = useState('');
+  const [email, setEmail] = useState('');
 
-  const dodajUKorpu = (proizvod) => {
-    setKorpa([...korpa, proizvod]);
-  };
-
-  const promeniPlacanje = (event) => {
-    setPlacanje(event.target.value);
-  };
-
-  const promeniCVC = (event) => {
-    const value = event.target.value.slice(0, 4);
-    setCVC(value);
-  };
-
-  const promeniBrojKartice = (event) => {
-    const value = event.target.value.slice(0, 16);
-    setBrojKartice(value);
-  };
-
-  const promeniDatumIsteka = (event) => {
-    const value = event.target.value;
-    if (/^\d{0,2}\/\d{0,2}$/.test(value)) {
-      setDatumIsteka(value);
+  const validacijaPolja = () => {
+    if (korak === 2) {
+      return ime && prezime && adresa && email;
     }
+    if (korak === 3 && placanje === 'karticom') {
+      return brojKartice && datumIsteka && cvc;
+    }
+    return true;
   };
 
   const potvrdiKupovinu = () => {
     setModalOpen(true);
-    setKorpa([]); // Isprazni korpu
+    setKorpa([]);
   };
 
   const zatvoriModal = () => {
@@ -52,93 +39,86 @@ const Korpa = ({ korpa, setKorpa }) => {
           <>
             <div className="korpa-container">
               <h2>Proizvodi u korpi</h2>
-              <div className="table-container">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Naziv proizvoda</th>
-                      <th>Cena</th>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Naziv proizvoda</th>
+                    <th>Cena</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {korpa.map((proizvod, index) => (
+                    <tr key={index}>
+                      <td>{proizvod.naziv}</td>
+                      <td>{proizvod.cena} dinara</td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    {korpa.map((proizvod, index) => (
-                      <tr key={index}>
-                        <td>{proizvod.naziv}</td>
-                        <td>{proizvod.cena} dinara</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+                  ))}
+                </tbody>
+              </table>
               <button onClick={() => setKorak(2)} className="next-btn">Next</button>
             </div>
-           
           </>
         )}
-
         {korak === 2 && (
           <>
             <div className="korpa-container">
               <h2>Unesite podatke o kupcu:</h2>
               <div className="form-container">
-            <div className="form-group">
-              <label>Ime:</label>
-              <input type="text" />
+                <div className="form-group">
+                  <label>Ime:</label>
+                  <input type="text" value={ime} onChange={(e) => setIme(e.target.value)} />
+                </div>
+                <div className="form-group">
+                  <label>Prezime:</label>
+                  <input type="text" value={prezime} onChange={(e) => setPrezime(e.target.value)} />
+                </div>
+                <div className="form-group">
+                  <label>Adresa:</label>
+                  <input type="text" value={adresa} onChange={(e) => setAdresa(e.target.value)} />
+                </div>
+                <div className="form-group">
+                  <label>Email:</label>
+                  <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+                </div>
+              </div>
+              <button onClick={() => validacijaPolja() && setKorak(3)} className="next-btn" disabled={!validacijaPolja()}>Next</button>
             </div>
-            <div className="form-group">
-              <label>Prezime:</label>
-              <input type="text" />
-            </div>
-            <div className="form-group">
-              <label>Adresa:</label>
-              <input type="text" />
-            </div>
-            <div className="form-group">
-              <label>Email:</label>
-              <input type="text" />
-            </div>
-          </div>
-          <button onClick={() => setKorak(3)} className="next-btn">Next</button>
-            </div>
-         
           </>
         )}
-
         {korak === 3 && (
           <>
             <div className="korpa-container">
               <h2>Način plaćanja</h2>
               <div className="form-container">
-            <label>
-              <select value={placanje} onChange={promeniPlacanje}>
-                <option value="pouzecem">Plaćanje pouzećem</option>
-                <option value="karticom">Plaćanje karticom</option>
-              </select>
-            </label>
-            {placanje === 'karticom' && (
-              <div>
-                <div className="form-group">
-                  <label>Broj kartice:</label>
-                  <input type="text" value={brojKartice} onChange={promeniBrojKartice} maxLength={16} />
-                </div>
-                <div className="form-group">
-                  <label>Ime na kartici:</label>
-                  <input type="text" />
-                </div>
-                <div className="form-group">
-                  <label>Datum isteka (mm/yy):</label>
-                  <input type="text" value={datumIsteka} onChange={promeniDatumIsteka} />
-                </div>
-                <div className="form-group">
-                  <label>CVC kod:</label>
-                  <input type="text" value={cvc} onChange={promeniCVC} maxLength={4} />
-                </div>
+                <label>
+                  <select value={placanje} onChange={(e) => setPlacanje(e.target.value)}>
+                    <option value="pouzecem">Plaćanje pouzećem</option>
+                    <option value="karticom">Plaćanje karticom</option>
+                  </select>
+                </label>
+                {placanje === 'karticom' && (
+                  <div>
+                    <div className="form-group">
+                      <label>Broj kartice:</label>
+                      <input type="text" value={brojKartice} onChange={(e) => setBrojKartice(e.target.value)} maxLength={16} />
+                    </div>
+                    <div className="form-group">
+                      <label>Ime na kartici:</label>
+                      <input type="text" />
+                    </div>
+                    <div className="form-group">
+                      <label>Datum isteka (mm/yy):</label>
+                      <input type="text" value={datumIsteka} onChange={(e) => setDatumIsteka(e.target.value)} />
+                    </div>
+                    <div className="form-group">
+                      <label>CVC kod:</label>
+                      <input type="text" value={cvc} onChange={(e) => setCVC(e.target.value)} maxLength={4} />
+                    </div>
+                  </div>
+                )}
               </div>
-            )}
-          </div>
-          <button onClick={potvrdiKupovinu} className="potvrdi-btn">Potvrdi kupovinu</button>
+              <button onClick={potvrdiKupovinu} className="potvrdi-btn" disabled={!validacijaPolja()}>Potvrdi kupovinu</button>
             </div>
-           
           </>
         )}
         {modalOpen && (

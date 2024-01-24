@@ -149,6 +149,7 @@ a {
     overflow: hidden;
     margin: 20px;
     cursor: pointer;
+    padding: 20px;
 }
 
 .product-image-container {
@@ -403,7 +404,7 @@ h2 {
 }
 
 .onama-background {
-    background-image: url('./Images/pocetna1.png');
+    background-image: url('./Components/Images/pocetna1.png');
     background-size: cover;
     background-position: center;
     display: flex;

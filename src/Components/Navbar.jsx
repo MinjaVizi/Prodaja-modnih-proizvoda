@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '../App.css';
 import logo from './Images/logo.png';
 
-const Navbar = () => {
+const Navbar = ({ pretraga, setPretraga }) => {
+  const location = useLocation();
+
   return (
     <nav className="navbar">
       <img src={logo} alt="Logo" className="navbar-logo" />
@@ -15,7 +17,9 @@ const Navbar = () => {
       <Link to="/online-prodavnica" className="navbar-link">Online Prodavnica</Link>
       <Link to="/korpa" className="navbar-link">Korpa</Link>
       <Link to="/omiljeno" className="navbar-link">Omiljeno</Link>
-      <input type="text" placeholder="Pretraga..." className="search-input" />
+      {(location.pathname === '/online-prodavnica' || location.pathname === '/omiljeno') && (
+        <input type="text" placeholder="Pretraga..." className="search-input" value={pretraga} onChange={(e) => setPretraga(e.target.value)} />
+      )}
     </nav>
   );
 };
